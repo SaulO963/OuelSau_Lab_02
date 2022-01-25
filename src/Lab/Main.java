@@ -1,7 +1,5 @@
 package Lab;
 
-import java.util.Arrays;
-
 /**
  * Name: Saul Ouellet
  * Date: January 25th 2022
@@ -48,11 +46,11 @@ public class Main {
 
     int testArr5[] = {5, 6, 7};
 
-    compareArray(testArr, testArr4);
+    compareArray(testArr, testArr4);    //diff sizes
 
-    compareArray(testArr3, testArr4);
+    compareArray(testArr3, testArr4);   //diff elems
 
-    compareArray(testArr4, testArr5);
+    compareArray(testArr4, testArr5);   //same
 
     System.out.println("Q5 Test =================================================================================================================");
 
@@ -79,11 +77,20 @@ public class Main {
             {6, 7, 8, 9, 10},
     };
 
-    compareArray2(testArrA, testArrB);
+    int testArrZ[][] = {        //3x5
+            {1, 1, 1, 1, 1},
+            {6, 7, 8, 9, 10},
+            {11,12,13,14,15},
+    };
 
-    compareArray2(testArrA, testArrC);
 
-    compareArray2(testArrA, testArrD);
+    compareArray2(testArrA, testArrB);  //3x5 vs 3x5 works -- they match
+
+    compareArray2(testArrA, testArrZ); //3x5 vs 3x5 works -- they don't match
+
+    compareArray2(testArrA, testArrC);  //3x5 vs 3x4 doesnt work
+
+    compareArray2(testArrA, testArrD);  //3x5 vs 2x5 doesnt work
 
     System.out.println("Q6 Test =================================================================================================================");
 
@@ -125,11 +132,17 @@ public class Main {
     }
 
     /***
-     * function displays 1D array using toString method from Arrays class
+     * function displays 1D array using a for loop
      * @param intArr supplies 1D int array to function
      */
     public static void displayArray(int intArr[]){
-        System.out.println(Arrays.toString(intArr));
+        System.out.print("[");
+        for(int i = 0; i < intArr.length; i++){
+            System.out.print(intArr[i]);
+            if(i != intArr.length-1)
+            System.out.print(", ");
+        }
+        System.out.print("]\n");
     }
 
     /***
@@ -149,7 +162,7 @@ public class Main {
     }
 
     /***
-     * function compares 2 1D int arrays with one another, will indicate if arrays are compatible or not. Uses equals method from Arrays class
+     * function compares 2 1D int arrays with one another, will indicate if arrays are compatible or not.
      * @param a supplies first int 1D array to function
      * @param b supplies second int 1D array to function
      * @return  return is boolean (true or false) -- automatically false if not compatible
@@ -159,12 +172,18 @@ public class Main {
             System.out.println("Arrays are incompatible (Not the same size)");
             return false;
         }
-        System.out.println("Equal: " + Arrays.equals(a,b));
-        return (Arrays.equals(a,b));
+        for(int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) {
+                System.out.println("Equal: false");
+                return false;
+            }
+        }
+        System.out.println("Equal: true");
+        return true;
     }
 
     /***
-     * function compares 2 2D int arrays with one another, will indicate if they're compatible or not. Uses deepEquals method in Arrays class
+     * function compares 2 2D int arrays with one another, will indicate if they're compatible or not.
      * @param a supplies first int 2D array to function
      * @param b supplies second int 2D array to function
      * @return  returns boolean (true or false) -- automatically false if not compatible
@@ -174,9 +193,16 @@ public class Main {
             System.out.println("Arrays are incompatible (Different Row and/or Column Size)");
             return false;
         }
-
-        System.out.println("Equal: " + Arrays.deepEquals(a,b));
-        return Arrays.deepEquals(a,b);
+        for(int i = 0; i < a.length; i++){
+            for(int j = 0; j < a[0].length;j++){
+                if(a[i][j] != b[i][j]) {
+                    System.out.println("Equal: false");
+                    return false;
+                }
+            }
+        }
+        System.out.println("Equal: true");
+        return true;
     }
 
     /***
