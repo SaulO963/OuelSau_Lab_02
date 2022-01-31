@@ -1,11 +1,11 @@
-package Lab;
-
 /**
  * Name: Saul Ouellet
  * Date: January 25th 2022
  * Description: This project implements a Main class with various methods to print and manipulate 1D and 2D Arrays. I've implemented
  * most of them so that the prints are in the methods themselves for clean readability.
  */
+
+package Lab;
 
 public class Main {
 
@@ -16,110 +16,110 @@ public class Main {
 
     public static void main(String[] args){
 
-    System.out.println("Q1 Test =================================================================================================================");
+        System.out.println("Q1 Test =================================================================================================================");
 
-    String fullName = "Saul Z. Ouellet";
+        String fullName = "Saul Z. Ouellet";
 
-    displayName(fullName);
+        displayName(fullName);
 
-    System.out.println("Q2 Test =================================================================================================================");
+        System.out.println("Q2 Test =================================================================================================================");
 
-    int testArr[] = { 1, 2, 3, 4, 5};
+        int testArr[] = { 1, 2, 3, 4, 5};
 
-    displayArray(testArr);
+        displayArray(testArr);
 
-    System.out.println("Q3 Test =================================================================================================================");
+        System.out.println("Q3 Test =================================================================================================================");
 
-    int testArr2[][] = {
-            {1, 2, 3, 4, 5},
-            {6, 7, 8, 9, 10},
-            {11,12,13,14,15},
-    };
-
-    displayArray2(testArr2);
-
-    System.out.println("Q4 Test =================================================================================================================");
-
-    int testArr3[] = {1, 2, 3};
-
-    int testArr4[] = {5, 6, 7};
-
-    int testArr5[] = {5, 6, 7};
-
-    compareArray(testArr, testArr4);    //diff sizes
-
-    compareArray(testArr3, testArr4);   //diff elems
-
-    compareArray(testArr4, testArr5);   //same
-
-    System.out.println("Q5 Test =================================================================================================================");
-
-    int testArrA[][] = {        //3x5
-            {1, 2, 3, 4, 5},
-            {6, 7, 8, 9, 10},
-            {11,12,13,14,15},
-    };
-
-    int testArrB[][] = {        //3x5
-            {1, 2, 3, 4, 5},
-            {6, 7, 8, 9, 10},
-            {11,12,13,14,15},
-    };
-
-    int testArrC[][] = {        //3x4
-            {1, 2, 3, 4},
-            {6, 7, 8, 9},
-            {11,12,13,14},
-    };
-
-    int testArrD[][] = {        //2x5
-            {1, 2, 3, 4, 5},
-            {6, 7, 8, 9, 10},
-    };
-
-    int testArrZ[][] = {        //3x5
-            {1, 1, 1, 1, 1},
-            {6, 7, 8, 9, 10},
-            {11,12,13,14,15},
-    };
-
-
-    compareArray2(testArrA, testArrB);  //3x5 vs 3x5 works -- they match
-
-    compareArray2(testArrA, testArrZ); //3x5 vs 3x5 works -- they don't match
-
-    compareArray2(testArrA, testArrC);  //3x5 vs 3x4 doesnt work
-
-    compareArray2(testArrA, testArrD);  //3x5 vs 2x5 doesnt work
-
-    System.out.println("Q6 Test =================================================================================================================");
-
-    sumArray(testArr);
-
-    System.out.println("Q7 Test =================================================================================================================");
-
-    sumArray2(testArrA);
-
-    System.out.println("Q8 Test =================================================================================================================");
-
-    int testArrM[][] = {        //5x3
-            {1, 2, 3},
-            {6, 7, 8},
-            {11,12,13},
-            {16,17,18},
-            {19,20,21}
-    };
-
-    int testArrN[][] = {        //5x3
-            {1, 2, 3},
-            {6, 7, 8},
-            {11,12,13},
+        int testArr2[][] = {
+                {1, 2, 3, 4, 5},
+                {6, 7, 8, 9, 10},
+                {11,12,13,14,15},
         };
 
-    displayArray2(multMat(testArrA, testArrM));     //successful     3x5 * 5x3
-    int multA[][] = multMat(testArrA, testArrA);    //unsuccessful   3x5 * 3x5
-    int multB[][] = multMat(testArrM, testArrD);    //unsuccessful   5x3 * 2x5
-    displayArray2(multMat(testArrN,testArrN));      //successful     3x3 * 3x3
+        displayArray2(testArr2);
+
+        System.out.println("Q4 Test =================================================================================================================");
+
+        int testArr3[] = {1, 2, 3};
+
+        int testArr4[] = {5, 6, 7};
+
+        int testArr5[] = {5, 6, 7};
+
+        compareArray(testArr, testArr4);    //diff sizes
+
+        compareArray(testArr3, testArr4);   //diff elems
+
+        compareArray(testArr4, testArr5);   //same
+
+        System.out.println("Q5 Test =================================================================================================================");
+
+        int testArrA[][] = {        //3x5
+                {1, 2, 3, 4, 5},
+                {6, 7, 8, 9, 10},
+                {11,12,13,14,15},
+        };
+
+        int testArrB[][] = {        //3x5
+                {1, 2, 3, 4, 5},
+                {6, 7, 8, 9, 10},
+                {11,12,13,14,15},
+        };
+
+        int testArrC[][] = {        //3x4
+                {1, 2, 3, 4},
+                {6, 7, 8, 9},
+                {11,12,13,14},
+        };
+
+        int testArrD[][] = {        //2x5
+               {1, 2, 3, 4, 5},
+               {6, 7, 8, 9, 10},
+        };
+
+        int testArrZ[][] = {        //3x5
+                {1, 1, 1, 1, 1},
+               {6, 7, 8, 9, 10},
+               {11,12,13,14,15},
+        };
+
+
+        compareArray2(testArrA, testArrB);  //3x5 vs 3x5 works -- they match
+
+        compareArray2(testArrA, testArrZ); //3x5 vs 3x5 works -- they don't match
+
+        compareArray2(testArrA, testArrC);  //3x5 vs 3x4 doesnt work
+
+        compareArray2(testArrA, testArrD);  //3x5 vs 2x5 doesnt work
+
+        System.out.println("Q6 Test =================================================================================================================");
+
+        sumArray(testArr);
+
+        System.out.println("Q7 Test =================================================================================================================");
+
+        sumArray2(testArrA);
+
+        System.out.println("Q8 Test =================================================================================================================");
+
+        int testArrM[][] = {        //5x3
+                {1, 2, 3},
+                {6, 7, 8},
+                {11,12,13},
+                {16,17,18},
+                {19,20,21}
+        };
+
+        int testArrN[][] = {        //5x3
+                {1, 2, 3},
+                {6, 7, 8},
+                {11,12,13},
+            };
+
+        displayArray2(multMat(testArrA, testArrM));     //successful     3x5 * 5x3
+        int multA[][] = multMat(testArrA, testArrA);    //unsuccessful   3x5 * 3x5
+        int multB[][] = multMat(testArrM, testArrD);    //unsuccessful   5x3 * 2x5
+        displayArray2(multMat(testArrN,testArrN));      //successful     3x3 * 3x3
 
     }//main bracket
 
